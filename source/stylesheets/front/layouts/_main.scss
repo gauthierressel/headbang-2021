@@ -1,0 +1,102 @@
+/**
+ * LAYOUT
+ * Name: Main
+ ********************************* */
+
+.l-main {
+  position: relative;
+
+  &:not(:first-child) {
+
+    @include mq($until: medium) {
+      @include rem(margin-top, $gutter-size*1.5);
+    }
+
+    @include mq($from: medium, $until: large) {
+      @include rem(margin-top, $gutter-size*2);
+    }
+
+    @include mq($from: large, $until: xlarge) {
+      @include rem(margin-top, $gutter-size*3);
+    }
+
+    @include mq($from: xlarge) {
+      @include rem(margin-top, $gutter-size*4);
+    }
+  }
+}
+
+
+  /**
+   * HEAD
+   *********************** */
+  .l-main__head {
+    transform: translate3d(0, $gutter-size, 0);
+    opacity: 0;
+    transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
+
+    body.is-ready & {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+
+
+  /**
+   * BODY
+   *********************** */
+  .l-main__body {
+    transform: translate3d(0, $gutter-size, 0);
+    opacity: 0;
+    transition: opacity 1s ease 0.6s, transform 1s ease 0.6s;
+
+    body.is-ready & {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+
+    &:not(:first-child) {
+
+      @include mq($until: medium) {
+        @include rem(margin-top, $gutter-size*1.5);
+      }
+
+      @include mq($from: medium, $until: large) {
+        @include rem(margin-top, $gutter-size*2);
+      }
+
+      @include mq($from: large, $until: xlarge) {
+        @include rem(margin-top, $gutter-size*3);
+      }
+
+      @include mq($from: xlarge) {
+        @include rem(margin-top, $gutter-size*4);
+      }
+    }
+  }
+
+
+  /**
+   * FOOT
+   *********************** */
+  .l-main__foot {
+
+    &:not(:first-child) {
+
+      @include mq($until: small) {
+        @include rem(margin-top, $gutter-size);
+      }
+
+      @include mq($from: small, $until: medium) {
+        @include rem(margin-top, $gutter-size*1.5);
+      }
+
+      @include mq($from: medium, $until: large) {
+        @include rem(margin-top, $gutter-size*2);
+      }
+
+      @include mq($from: large) {
+        @include rem(margin-top, $gutter-size*3);
+      }
+    }
+  }

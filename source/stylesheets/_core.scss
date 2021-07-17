@@ -1,0 +1,99 @@
+@import "vendors/reset";
+
+:root {
+  --vh-offset: 0px;
+  --vw-offset: 0px;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  @include rem(min-width, 320px);
+  background: $color-background none;
+  color: $color-foreground;
+  font-family: $font-default;
+  font-size: em($font-size, $rem-baseline);
+  line-height: $line-height / $font-size;
+  font-weight: $font-regular;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  // &:before {
+  //   content: '';
+  //   position: absolute;
+  //   height: 215vh;
+  //   top: 0;
+  //   right: 0;
+  //   left: 0;
+  //   background: linear-gradient(-25deg, $color-background 20%, $color-primary);
+  //   background: linear-gradient(75deg, #5d4093 -80%, #161616 120%);
+  //   background: radial-gradient(circle at left, #5d4093, transparent);
+  //   z-index: -1;
+  // }
+
+  &.menu-opened {
+    overflow: hidden;
+  }
+}
+
+a {
+  color: $color-foreground;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img,
+svg {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}

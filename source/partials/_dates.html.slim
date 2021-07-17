@@ -1,0 +1,27 @@
+- weekdays = { '1' => 'Lun.', '2' => 'Mar.', '3' => 'Mer.', '4' => 'Jeu.', '5' => 'Ven.', '6' => 'Sam.', '7' => 'Dim.' }
+- months = { '01' => 'janvier', '02' => 'février', '03' => 'mars', '04' => 'avril', '05' => 'mai', '06' => 'juin', '07' => 'juillet', '08' => 'août', '09' => 'septembre', '10' => 'octobre', '11' => 'novembre', '12' => 'décembre' }
+
+
+.v-dates
+  .l-container.l-container--large
+    .v-dates__container
+
+      .v-dates__main
+        .v-dates__items
+
+          - for date in dato.dates
+            - if date.datetime.strftime('%Y%m%d') >= Date.today.strftime('%Y%m%d')
+              .v-dates__item
+                - label = weekdays[date.datetime.strftime('%u')] + ' ' + date.datetime.strftime('%d') + ' ' + months[date.datetime.strftime('%m')] + ' ' + date.datetime.strftime('%Y')
+                - href = '/' + date.slug + '/'
+
+                = link_to href, :class => 'c-date' do
+                  .c-date__container.u-glitch
+                    - for i in 1..3
+                      .c-date__inner.u-glitch-item
+                        .c-date__label= label
+                        .c-date__title= date.title
+                        - if date.subtitle
+                          .c-date__subtitle= date.subtitle
+                        - if date.location
+                          .c-date__caption= date.location

@@ -1,0 +1,22 @@
+// SETTINGS
+@import "front/settings/animations";
+@import "front/settings/colors";
+@import "front/settings/fonts";
+@import "front/settings/layout";
+
+// TOOLS
+// Functions and mixins
+@import "vendors/rem";
+@import "vendors/em";
+@import "vendors/mq";
+@import "vendors/slick";
+@import "vendors/aos";
+@import "front/tools/animations";
+@import "front/tools/colors";
+@import "front/tools/fonts";
+@import "front/tools/layout";
+@import "front/tools/text";
+
+// CORE
+// Reset & core styles
+@import "core";

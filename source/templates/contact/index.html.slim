@@ -1,0 +1,16 @@
+- body_class 'page-contact'
+- meta_title "Nous contacter | Headbang, Loud and Proud"
+- meta_description "L'association Hopla!, créée en 2002, communique depuis 2015 sous l’appellation « Headbang » et organise des concerts metal en Alsace. Contactez-nous !"
+
+.l-main__head
+  .l-container.l-container--small
+    h1.c-title
+      span.u-color-primary= "Nous "
+      br
+      span= "contacter."
+
+.l-main__body
+  = render :partial => 'partials/contacts'
+
+.l-main__foot
+  / = render :partial => 'layouts/front/menu'

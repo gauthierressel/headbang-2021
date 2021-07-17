@@ -1,0 +1,16 @@
+.c-manifest
+  .l-container.l-container--small
+    .c-manifest__content
+
+      = dato.manifest.introduction
+
+      div.c-manifest__pictures
+        - for picture in dato.manifest.dual_pictures
+          = image_tag picture.url({ w: 480, h: 720, fit: 'crop', crop: 'center' }), :class => 'c-manifest__picture'
+
+      = dato.manifest.content
+
+      .c-manifest__media
+        = image_tag dato.manifest.single_picture.url({ w: 960 }), :class => 'c-manifest__picture'
+
+      = dato.manifest.conclusion
