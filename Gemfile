@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'middleman', '~> 4.2'
 gem 'middleman-sprockets', '~> 4.1.0'
-gem 'middleman-autoprefixer', '~> 2.7'
+# gem 'middleman-autoprefixer', '~> 2.7'
 gem 'middleman-livereload'
 gem 'middleman-dato', '0.9.0'
 gem 'slim'
