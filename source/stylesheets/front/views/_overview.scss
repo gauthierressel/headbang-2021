@@ -123,6 +123,24 @@
         }
       }
 
+        .v-overview__tag {
+          display: inline-block;
+          margin-bottom: rem($gutter-size/8);
+          padding: rem($gutter-size/8 $gutter-size/4);
+          font-weight: $font-bold;
+          text-transform: uppercase;
+          color: $color-white;
+          background: linear-gradient(to top right, $color-primary, $color-secondary);
+
+          @include mq($until: medium) {
+            @include font-size(22px, 26px);
+          }
+
+          @include mq($from: medium) {
+            @include font-size(28px, 32px);
+          }
+        }
+
         .v-overview__upcoming {
           position: relative;
           display: inline-block;

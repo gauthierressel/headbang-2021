@@ -46,23 +46,14 @@
 
 
       /**
-       * LABEL
+       * HEAD
        *********************** */
-      .c-date__label {
-        position: relative;
-        @include rem(padding-right, 5px);
-        @include rem(padding-left, 5px);
-
-        &:before {
-          content: '';
-          position: absolute;
-          @include rem(height, 10px);
-          right: 0;
-          @include rem(bottom, -4px);
-          left: 0;
-          background-color: $color-primary;
-          z-index: -1;
-        }
+      .c-date__head {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-end;
 
         @include mq($until: large) {
           @include font-size(14px, 14px);
@@ -91,6 +82,44 @@
           }
         }
       }
+
+
+        /**
+         * LABEL
+         *********************** */
+        .c-date__label {
+          position: relative;
+          @include rem(padding-right, 5px);
+          @include rem(padding-left, 5px);
+
+          &:before {
+            content: '';
+            position: absolute;
+            @include rem(height, 10px);
+            right: 0;
+            @include rem(bottom, -4px);
+            left: 0;
+            background-color: $color-primary;
+            z-index: -1;
+          }
+
+          &:not(:first-child) {
+            margin-left: rem($gutter-size/2);
+          }
+        }
+
+
+        /**
+         * TAG
+         *********************** */
+        .c-date__tag {
+          display: inline-block;
+          padding: rem($gutter-size/8 $gutter-size/4);
+          font-weight: $font-bold;
+          text-transform: uppercase;
+          color: $color-white;
+          background: linear-gradient(to top right, $color-primary, $color-secondary);
+        }
 
 
       /**

@@ -19,7 +19,10 @@
                   .c-date__container.u-glitch
                     - for i in 1..3
                       .c-date__inner.u-glitch-item
-                        .c-date__label= label
+                        .c-date__head
+                          - if date.free == true
+                            .c-date__tag= "Gratuit"
+                          .c-date__label= label
                         .c-date__title= date.title
                         - if date.subtitle
                           .c-date__subtitle= date.subtitle

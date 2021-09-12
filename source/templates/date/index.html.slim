@@ -47,7 +47,10 @@
           = image_tag date.picture.url({ w: 520 }), :alt => date.picture.alt, :class => 'v-overview__picture'
 
           .v-overview__more
-            - if date.tickets_link
+            - if date.free == true
+              .v-overview__tag= "Concert gratuit !"
+              .v-overview__value= "Entrée libre, pas de réservation"
+            - elsif date.tickets_link and date.tickets_link != ""
               a.c-button(class="v-overview__button" href=date.tickets_link target="_blank")
                 .c-button__label= "Billetterie"
                 .c-button__suffix= "frais de réservation offerts !"
@@ -62,18 +65,20 @@
             .v-overview__info
               .v-overview__label= "Quand ?"
               .v-overview__value= full_date
-            .v-overview__info
-              .v-overview__label= "Tarifs"
-              .v-overview__value
-                span= "Pré-ventes : "
-                strong= date.presales
-                =" (+ frais de réservation)"
-                br
-                = "Caisse du soir : "
-                strong= date.box_office
-                br
-                = "Carte Culture : "
-                strong= date.carte_culture
+
+            - if date.free != true
+              .v-overview__info
+                .v-overview__label= "Tarifs"
+                .v-overview__value
+                  span= "Pré-ventes : "
+                  strong= date.presales
+                  =" (+ frais de réservation)"
+                  br
+                  = "Caisse du soir : "
+                  strong= date.box_office
+                  br
+                  = "Carte Culture : "
+                  strong= date.carte_culture
 
             - if date.facebook_event
               .v-overview__info
